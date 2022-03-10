@@ -124,6 +124,12 @@ kubectl get ds -o json --all-namespaces &>> output.log
 echo "" >> output.log
 echo "|#16|" >> output.log
 
+echo "|#17|" >> output.log
+echo "" >> output.log
+kubectl get svc -o json --all-namespaces &>> output.log
+echo "" >> output.log
+echo "|#17|" >> output.log
+
 sed -i '/WARNING: The behavior of this command has been altered by the following extension: aks-preview/c "",/g' output.log
 sed -i '/\"token\":/c\   \"token\": \"\"' output.log
 sed -i '/\"ca.crt\":/c\   \"ca.crt\": \"\"' output.log
